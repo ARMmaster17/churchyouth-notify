@@ -8,4 +8,5 @@ gem 'slim'
 gem 'rest-client'
 gem 'json'
 gem "rack-test"
+gem 'pony'
 gem "codeclimate-test-reporter", group: :test, require: nil
