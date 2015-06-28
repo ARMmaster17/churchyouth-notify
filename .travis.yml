@@ -16,7 +16,7 @@ branches:
   - master
 addons:
   code_climate:
-    repo_token: 
+    repo_token: df6fca976b35e8655b80ada6c16c7f33fa2ddaed5bc83315f945755fa8d5c3bd
   apt:
     packages:
 install:
@@ -30,5 +30,5 @@ script:
 deploy:
   provider: heroku
   api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
-  app: 
+  app: ldsyouth-notify
   skip_cleanup: true
