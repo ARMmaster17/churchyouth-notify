@@ -13,4 +13,8 @@ module Mail
               :subject => subject,
               :body => slim bodypath.to_sym
   end
+  def Mail.validate(to)
+    #Validate email address
+    return true
+  end
 end
