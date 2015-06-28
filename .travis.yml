@@ -1,0 +1,34 @@
+language: ruby
+rvm:
+  - 2.2.1
+git:
+  submodules: false
+env:
+  - RACK_ENV=test
+notifications:
+  email:
+    recipients:
+      - wordman05@gmail.com
+    on_success: change
+    on_failure: always
+branches:
+  only:
+  - master
+addons:
+  code_climate:
+    repo_token: 
+  apt:
+    packages:
+install:
+  - bundle install
+script:
+  - echo 'Configuring JIT variables...'
+  - sed 's/TRAVISCOMMIT/'$TRAVIS_COMMIT'/' builddata.partial.rb > builddata.partial2.rb
+  - sed 's/TRAVISBUILD/'$TRAVIS_BUILD_NUMBER'/' builddata.partial2.rb > inc/builddata.rb
+  - head ./inc/builddata.rb
+  - rake test --trace
+deploy:
+  provider: heroku
+  api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
+  app: 
+  skip_cleanup: true
