@@ -8,6 +8,12 @@ require_relative 'inc/api'
 require_relative 'inc/mail'
 require_relative 'inc/builddata'
 
+helpers do
+  def login?
+    return false
+  end
+end
+
 get '/' do
   slim :home
 end
