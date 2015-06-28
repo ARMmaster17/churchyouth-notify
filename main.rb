@@ -6,7 +6,7 @@ require 'rest-client'
 require 'json'
 require_relative 'inc/api'
 require_relative 'inc/mail'
-require_relative 'inc/builddata'
+require_relative 'inc/pagevars'
 
 helpers do
   def login?
@@ -15,6 +15,8 @@ helpers do
 end
 
 get '/' do
+  @PageTitle = 'Home'
+  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
   slim :home
 end
 
