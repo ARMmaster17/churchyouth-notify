@@ -1,7 +1,7 @@
 require 'json'
 
 module Config
-  def getVar(varname)
+  def Config.getVar(varname)
     configfile = File.read('../config/config.json')
     confighash = JSON.parse(configfile)
     case varname
