@@ -15,3 +15,6 @@ end
 get '/api' do
   API.a()
 end
+get '/api/mail/validate' do
+  API.mailvalidate(:params['m'])
+end
