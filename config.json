@@ -7,6 +7,6 @@
   "class-miamaid":"no",
   "class-laurel":"no",
   "rooturl":"http://ldsyouth-notify.herokuapp.com",
-  "ssl":"no"
+  "ssl":"no",
   "ldsio":"no"
 }
