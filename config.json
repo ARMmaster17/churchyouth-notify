@@ -1,3 +1,12 @@
 {
-  "ward":"Mars Hill Ward"
+  "ward":"Mars Hill Ward",
+  "quorum-deacon":"yes",
+  "quorum-teacher":"yes",
+  "quorum-priest":"yes",
+  "class-beehive":"no",
+  "class-miamaid":"no",
+  "class-laurel":"no",
+  "rooturl":"http://ldsyouth-notify.herokuapp.com",
+  "ssl":"no"
+  "ldsio":"no"
 }
