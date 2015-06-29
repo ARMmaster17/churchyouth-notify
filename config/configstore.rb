@@ -1,4 +1,4 @@
-Module ConfigStore
+module ConfigStore
   WARD = "Place Holder Ward"
   WARDID = 000000000000
   QUORUMDEACON = true
