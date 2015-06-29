@@ -9,5 +9,5 @@ Module ConfigStore
   CLASSLAUREL = false
   ROOTURL = "http://ldsyouth-notify.herokuapp.com"
   SSL = false
-  LDSIO = falsee
+  LDSIO = false
 end
