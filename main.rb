@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'rubygems'
+require 'rubygems' if RUBY_VERSION < "1.9"
 require 'sinatra'
 require 'slim'
 require 'rest-client'
@@ -9,24 +9,30 @@ require_relative 'inc/mail'
 require_relative 'inc/pagevars'
 require_relative 'inc/config'
 
-enable :sessions
+class Ldsyn < Sinatra::Base
 
-helpers do
-  def login?
-    return false
+  enable :sessions
+
+  helpers do
+    def login?
+      return false
+    end
   end
+
+  get '/' do
+    @PageTitle = 'Home'
+    @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+    @configWard = Config.getVar("ward")
+    slim :home
+  end
+
+  get '/api' do
+    API.a()
+  end
+  get '/api/mail/validate' do
+    API.mailvalidate(:params['m'])
+  end
+
 end
 
-get '/' do
-  @PageTitle = 'Home'
-  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
-  @configWard = Config.getVar("ward")
-  slim :home
-end
-
-get '/api' do
-  API.a()
-end
-get '/api/mail/validate' do
-  API.mailvalidate(:params['m'])
-end
+Ldsyn.run!
