@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems' if RUBY_VERSION < "1.9"
-require 'sinatra'
+require 'sinatra/base'
 require 'slim'
 require 'rest-client'
 require 'json'
