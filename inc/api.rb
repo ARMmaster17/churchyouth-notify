@@ -5,6 +5,11 @@ module API
     return "200 API OK"
   end
   def API.mailvalidate(to)
-    return Mail.validate(to)
+    r = Mail.validate(to)
+    if (r)
+      return "true"
+    else
+      return "false"
+    end
   end
 end
