@@ -18,6 +18,7 @@ end
 get '/' do
   @PageTitle = 'Home'
   @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.setVars("ward")
   slim :home
 end
 
