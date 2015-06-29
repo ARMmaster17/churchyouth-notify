@@ -9,6 +9,8 @@ require_relative 'inc/mail'
 require_relative 'inc/pagevars'
 require_relative 'inc/config'
 
+enable :sessions
+
 helpers do
   def login?
     return false
