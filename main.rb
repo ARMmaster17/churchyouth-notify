@@ -30,3 +30,10 @@ end
 get '/api/mail/validate' do
   API.mailvalidate(:params['m'])
 end
+get '/api/config' do
+  # return config in JSON
+  return 'ERROR: NotImplemented'
+end
+get '/api/config/ward' do
+  return '{ "ward":"#{Config.getVar("ward")}" }'
+end
