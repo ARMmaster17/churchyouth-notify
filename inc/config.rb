@@ -1,12 +1,10 @@
-require 'json'
+require_relative '../config/configstore'
 
 module Config
   def Config.getVar(varname)
-    configfile = File.read('../config/config.json')
-    confighash = JSON.parse(configfile)
     case varname
     when "ward"
-      return confighash["ward"]
+      return ConfigStore::WARD
     else
       return "Empty"
     end
