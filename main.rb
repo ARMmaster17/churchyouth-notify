@@ -7,6 +7,7 @@ require 'json'
 require_relative 'inc/api'
 require_relative 'inc/mail'
 require_relative 'inc/pagevars'
+require_relative 'inc/config'
 
 helpers do
   def login?
@@ -17,6 +18,7 @@ end
 get '/' do
   @PageTitle = 'Home'
   @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.getVar("ward")
   slim :home
 end
 
