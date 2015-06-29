@@ -12,8 +12,16 @@ class TestVersion < Test::Unit::TestCase
     get '/'
     assert last_response.ok?
   end
-  def tests_apia
+  def test_apia
     get '/api'
+    assert last_response.ok?
+  end
+  def test_apiconfig
+    get '/api/config'
+    assert last_response.ok?
+  end
+  def test_apiconfigward
+    get '/api/config/ward'
     assert last_response.ok?
   end
 end
