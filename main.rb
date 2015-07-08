@@ -15,6 +15,13 @@ helpers do
   def login?
     return false
   end
+  def configured?
+    if File.exists(File.dirname(__FILE__) + "config.json")
+      return true
+    else
+      return false
+    end
+  end
 end
 
 get '/' do
