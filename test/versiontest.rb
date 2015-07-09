@@ -15,6 +15,7 @@ class TestVersion < Test::Unit::TestCase
   def test_setupcallback
     post '/setupcallback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
+    assert File.exists?("../config/config.json")
   end
   def test_homepage
     get '/'
