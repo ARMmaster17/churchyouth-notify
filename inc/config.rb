@@ -1,4 +1,3 @@
-require_relative '../config/configstore'
 require 'json'
 
 module Config
