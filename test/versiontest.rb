@@ -4,6 +4,7 @@ require 'rack/test'
 require_relative '../main'
 
 class TestVersion < Test::Unit::TestCase
+  self.test_order = :defined
   include Rack::Test::Methods
   def app
     Sinatra::Application
