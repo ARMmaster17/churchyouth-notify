@@ -25,12 +25,25 @@ helpers do
 end
 
 get '/' do
-  @PageTitle = 'Home'
-  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
-  @configWard = Config.getVar("ward")
-  slim :home
+  if configured?
+    @PageTitle = 'Home'
+    @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+    @configWard = Config.getVar("ward")
+    slim :home
+  else
+    redirect '/setup'
+  end
 end
-
+get '/setup' do
+  if configured?
+    redirect '/'
+  else
+    slim :setupapp
+  end
+end
+post '/setup/callback' do
+  # Send configuration to config file
+end
 get '/api' do
   API.a()
 end
