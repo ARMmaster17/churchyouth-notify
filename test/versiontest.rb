@@ -4,13 +4,19 @@ require 'rack/test'
 require_relative '../main'
 
 class TestVersion < Test::Unit::TestCase
+  self.test_order = :defined
   include Rack::Test::Methods
   def app
     Sinatra::Application
   end
-  def test_homepage
-    get '/'
+  def test_setup
+    get '/setup'
     assert last_response.ok?
+  end
+  def test_setupcallback
+    post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
+    assert !last_response.ok?
+    assert File.exists?(File.expand_path("./config/config.json"))
   end
   def test_apia
     get '/api'
@@ -22,6 +28,10 @@ class TestVersion < Test::Unit::TestCase
   end
   def test_apiconfigward
     get '/api/config/ward'
+    assert last_response.ok?
+  end
+  def test_homepage
+    get '/'
     assert last_response.ok?
   end
 end
