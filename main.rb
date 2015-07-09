@@ -16,7 +16,7 @@ helpers do
     return false
   end
   def configured?
-    if File.exists(File.dirname(__FILE__) + "config.json")
+    if File.exists(File.dirname(__FILE__) + "config/config.json")
       return true
     else
       return false
@@ -49,7 +49,7 @@ post '/setup/callback' do
   quorumstring = quorumarray.map(&:inspect).join(',')
   classstring = classarray.map(&:inspect).join(',')
   begin
-    file = File.open("/config/config.json", "w")
+    file = File.open(File.dirname(__FILE__) + "config/config.json", "w")
     file.write('{ "ward":"#{warddata}","classes":{ #{classstring} },"quorums":{ #{quorumstring} }}') 
     file.close()
   rescue IOError => e
