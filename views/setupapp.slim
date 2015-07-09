@@ -1,0 +1,27 @@
+<h1>Setup</h1>
+<p>This installer will now walk you through the rest of the setup phase. Note that you will need a valid and up-to-date LDS.org account to complete the setup.</p>
+<hr />
+<form action="/setup/callback" method="POST">
+  Ward/Branch name:<br>
+  <input type="text" name="ward" value="Sample Ward/Branch"><br>
+  <hr />
+  <p>Check all classses/quorums you would like to enable ldsyouth-notify for (this can be changed later).</p>
+  <input type="checkbox" name="cq[]" value="qd">Deacons<br/>
+  <input type="checkbox" name="cq[]" value="qt">Teachers<br/>
+  <input type="checkbox" name="cq[]" value="qp">Priests<br/>
+  <input type="checkbox" name="cq[]" value="cb">Behives<br/>
+  <input type="checkbox" name="cq[]" value="cm">Miamaids<br/>
+  <input type="checkbox" name="cq[]" value="cl">Laurels<br/>
+  <hr />
+  <p>For the next step, you will need to log in using your lds.org account. Before you continue, make sure that you have one of the following callings listed on your profile before you continue:</p>
+  <ul>
+    <li>Bishop</li>
+    <li>Counselor of the bishop</li>
+    <li>Ward Clerk</li>
+    <li>YM/YW leader</li>
+    <li>Scoutmaster (Boy Scouts only)</li>
+    <li>Ward Technology Specialist</li>
+    <li>Building activity coordinator</li>
+  </ul>
+  <input type="submit" value="Continue ->">
+</form>
