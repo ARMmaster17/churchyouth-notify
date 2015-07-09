@@ -8,6 +8,14 @@ class TestVersion < Test::Unit::TestCase
   def app
     Sinatra::Application
   end
+  def test_setup
+    get '/setup'
+    assert last_response.ok?
+  end
+  def test_setupcallback
+    post '/setupcallback', :ward => "Test ward", :qa => {"qd","qt","qp"}, :ca => {"cb","cm","cl"}
+    assert !last_response.ok?
+  end
   def test_homepage
     get '/'
     assert last_response.ok?
