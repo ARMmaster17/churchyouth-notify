@@ -16,11 +16,7 @@ class TestVersion < Test::Unit::TestCase
     post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
     puts last_response
-    assert File.exists?("../config/config.json")
-  end
-  def test_homepage
-    get '/'
-    assert last_response.ok?
+    assert File.exists?(File.expand_path("../config/config.json"))
   end
   def test_apia
     get '/api'
@@ -32,6 +28,10 @@ class TestVersion < Test::Unit::TestCase
   end
   def test_apiconfigward
     get '/api/config/ward'
+    assert last_response.ok?
+  end
+  def test_homepage
+    get '/'
     assert last_response.ok?
   end
 end
