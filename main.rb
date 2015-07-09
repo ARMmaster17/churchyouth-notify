@@ -16,7 +16,7 @@ helpers do
     return false
   end
   def configured?
-    if File.exists(File.dirname(__FILE__) + "config/config.json")
+    if File.exists?(File.dirname(__FILE__) + "config/config.json")
       return true
     else
       return false
