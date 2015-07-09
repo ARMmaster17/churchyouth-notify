@@ -43,6 +43,9 @@ get '/setup' do
 end
 post '/setup/callback' do
   # Send configuration to config file
+  classquorumarray = params[:cq]
+  warddata = params[:ward]
+  #TODO: add interface to config file
 end
 get '/api' do
   API.a()
