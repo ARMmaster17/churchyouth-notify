@@ -5,7 +5,7 @@ module Config
     case varname
     when "ward"
       begin
-        file = open("shops.json")
+        file = open("../config/config.json")
         parsed = JSON.parse(file.read)
       rescue
         return "Error"
