@@ -50,8 +50,7 @@ post '/setup/callback' do
   classstring = classarray.map(&:inspect).join(',')
   begin
     file = File.open(File.dirname(__FILE__) + "/config/config.json", "w")
-    file.write('{ "ward":"#{warddata}","classes":{ #{classstring} },"quorums":{ #{quorumstring} }}') 
-    file.close()
+    file.write('{ "ward":"#{warddata}","classes":{ #{classstring} },"quorums":{ #{quorumstring} }}')
   rescue IOError => e
     "An error has occured. Please send this code to the developer: 0x00 CONFIGSTOREIOERR"
     ioerr = true
