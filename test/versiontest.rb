@@ -3,6 +3,7 @@ require "test/unit"
 require 'rack/test'
 require_relative '../main'
 require_relative '../inc/config'
+require 'json'
 
 class TestVersion < Test::Unit::TestCase
   self.test_order = :defined
@@ -19,7 +20,8 @@ class TestVersion < Test::Unit::TestCase
     assert !last_response.ok?
     assert File.exists?(File.expand_path("./config/config.json"))
     configs = File.open(File.expand_path("./config/config.json"))
-    puts configs.read()
+    jsondata = JSON.parse(configs.read)
+    assert jsondata['ward'] = "Test ward"
   end
   def test_apia
     get '/api'
