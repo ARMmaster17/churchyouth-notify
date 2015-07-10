@@ -34,6 +34,7 @@ class TestVersion < Test::Unit::TestCase
   def test_apiconfigward
     get '/api/config/ward'
     assert last_response.ok?
+    assert last_response.body = "Test ward"
   end
   def test_homepage
     get '/'
