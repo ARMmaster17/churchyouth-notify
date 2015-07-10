@@ -39,6 +39,7 @@ class TestVersion < Test::Unit::TestCase
   def test_apimailvalidate
     get '/api/mail/validate?m=user@test.com'
     assert last_response.ok?
+  end
   def test_homepage
     get '/'
     assert last_response.ok?
