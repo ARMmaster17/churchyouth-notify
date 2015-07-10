@@ -46,8 +46,8 @@ post '/setup/callback' do
   quorumarray = params[:qa]
   classarray = params[:ca]
   warddata = params[:ward]
-  quorumstring = quorumarray.map(&:inspect).join(',')
-  classstring = classarray.map(&:inspect).join(',')
+  quorumstring = quorumarray.join(',')
+  classstring = classarray.join(',')
   begin
     file = File.open(File.expand_path("./config/config.json"), "w")
     file.write('{ "ward":"' + warddata + '","classes":"' + classstring + '","quorums":"' + quorumstring + '" }')
