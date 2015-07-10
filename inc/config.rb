@@ -5,7 +5,7 @@ module Config
     case varname
     when "ward"
       begin
-        file = open("../config/config.json")
+        file = open(File.expand_path("./config/config.json"))
         parsed = JSON.parse(file.read)
       rescue
         return "Error"
@@ -14,5 +14,8 @@ module Config
     else
       return "Empty"
     end
+  end
+  def Config.factoryreset()
+    File.delete(File.expand_path("./config/config.json"))
   end
 end

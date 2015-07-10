@@ -2,6 +2,7 @@ require_relative "../test_helper"
 require "test/unit"
 require 'rack/test'
 require_relative '../main'
+require_relative '../inc/config'
 
 class TestVersion < Test::Unit::TestCase
   self.test_order = :defined
@@ -33,5 +34,8 @@ class TestVersion < Test::Unit::TestCase
   def test_homepage
     get '/'
     assert last_response.ok?
+  end
+  def test_reset
+    Config.factoryreset
   end
 end
