@@ -8,7 +8,15 @@ module Mail
               :body => body
   end
   def Mail.validate(to)
-    #Validate email address
-    return true
+    if to.include?("@")
+      if to.include?(".com")
+        return true
+      elsif to.include?(".net")
+        return true
+      elsif to.include?(".org")
+        return true
+      end
+    end
+    return false
   end
 end
