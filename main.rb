@@ -43,9 +43,9 @@ get '/setup' do
 end
 post '/setup/callback' do
   # Send configuration to config file
-  quorumarray = :params['qa']
-  classarray = :params['ca']
-  warddata = :params['ward']
+  quorumarray = params[:qa]
+  classarray = params[:ca]
+  warddata = params[:ward]
   quorumstring = quorumarray.map(&:inspect).join(',')
   classstring = classarray.map(&:inspect).join(',')
   begin
