@@ -18,7 +18,8 @@ class TestVersion < Test::Unit::TestCase
     post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
     assert File.exists?(File.expand_path("./config/config.json"))
-    puts File.open(File.expand_path("./config/config.json")File.expand_path("./config/config.json")).read()
+    configs = File.open(File.expand_path("./config/config.json")File.expand_path("./config/config.json"))
+    puts configs.read()
   end
   def test_apia
     get '/api'
