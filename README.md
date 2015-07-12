@@ -5,5 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/badges/gpa.svg)](https://codeclimate.com/github/ARMmaster17/ldsyouth-notify)
 [![Test Coverage](https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/badges/coverage.svg)](https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/coverage)
 [![Dependency Status](https://www.versioneye.com/user/projects/5591374a3965610019000020/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5591374a3965610019000020)
+[![Issue Stats](http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/pr?style=flat)](http://issuestats.com/github/ARMmaster17/ldsyouth-notify)
+[![Issue Stats](http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/issue?style=flat)](http://issuestats.com/github/ARMmaster17/ldsyouth-notify)
 
 Componentized, deployable tool for managing LDS youth group activities.
