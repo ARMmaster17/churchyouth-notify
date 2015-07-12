@@ -74,7 +74,7 @@ get '/api' do
   API.a()
 end
 get '/api/mail/validate' do
-  API.mailvalidate(:params['m'])
+  API.mailvalidate(params[:m])
 end
 get '/api/config' do
   # return config in JSON
