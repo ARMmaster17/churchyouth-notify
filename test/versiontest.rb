@@ -29,6 +29,10 @@ class TestVersion < Test::Unit::TestCase
     jsondata = JSON.parse(configs.read)
     assert_equal(jsondata['ward'], "Test ward")
   end
+  def test_staticprivacy
+    get '/static/privacy'
+    assert last_response.ok?
+  end
   def test_apia
     get '/api'
     assert last_response.ok?
