@@ -72,5 +72,5 @@ get '/api/config' do
   return 'ERROR: NotImplemented'
 end
 get '/api/config/ward' do
-  return '{ "ward":"#{Config.getVar("ward")}" }'
+  return '{ "ward":"' + Config.getVar("ward") + '" }'
 end
