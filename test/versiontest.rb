@@ -21,7 +21,7 @@ class TestVersion < Test::Unit::TestCase
     assert File.exists?(File.expand_path("./config/config.json"))
     configs = File.open(File.expand_path("./config/config.json"))
     jsondata = JSON.parse(configs.read)
-    assert jsondata['ward'] = "Test ward"
+    assert_equal(jsondata['ward'], "Test ward")
   end
   def test_apia
     get '/api'
@@ -34,7 +34,7 @@ class TestVersion < Test::Unit::TestCase
   def test_apiconfigward
     get '/api/config/ward'
     assert last_response.ok?
-    assert last_response.body = "Test ward"
+    assert_equal(JSON.parse(last_response.body)['ward'], 'Test ward')
   end
   def test_apimailvalidate
     get '/api/mail/validate?m=user@test.com'
