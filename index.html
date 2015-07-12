@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ldsyouth-notify by ARMmaster17</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ldsyouth-notify</h1>
+        <h2>Componentized, deployable tool for managing LDS youth group activities.</h2>
+        <a href="https://github.com/ARMmaster17/ldsyouth-notify" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="ldsyouth-notify" class="anchor" href="#ldsyouth-notify" aria-hidden="true"><span class="octicon octicon-link"></span></a>ldsyouth-notify</h1>
+
+<p><a href="https://gitter.im/ARMmaster17/ldsyouth-notify?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/ARMmaster17/ldsyouth-notify"></a>
+<a href="https://travis-ci.org/ARMmaster17/ldsyouth-notify"><img src="https://travis-ci.org/ARMmaster17/ldsyouth-notify.svg" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/ARMmaster17/ldsyouth-notify"><img src="https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/coverage"><img src="https://codeclimate.com/github/ARMmaster17/ldsyouth-notify/badges/coverage.svg" alt="Test Coverage"></a>
+<a href="https://www.versioneye.com/user/projects/5591374a3965610019000020"><img src="https://www.versioneye.com/user/projects/5591374a3965610019000020/badge.svg?style=flat" alt="Dependency Status"></a>
+<a href="http://issuestats.com/github/ARMmaster17/ldsyouth-notify"><img src="http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/pr?style=flat" alt="Issue Stats"></a>
+<a href="http://issuestats.com/github/ARMmaster17/ldsyouth-notify"><img src="http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/issue?style=flat" alt="Issue Stats"></a></p>
+
+<p>Ldsyouth-notify is a omponentized, deployable tool for managing LDS youth group activities. It simplifies the task of sending emails out to keep parents and youth notified of upcoming mutual events and sunday assignments. It is designed to be easily deployable with no experience or hardware needed. Ldsyouth-notify also feeds directly from the lds.org directory. No need for keeping track of up-to-date emails!</p>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h1>
+
+<p>To get started, you will need the following:</p>
+
+<ul>
+<li>[ ] A <a href="heroku.com">Heroku account</a>
+</li>
+<li>[ ] A Google Drive or Dropbox account (For advanced users: Git)</li>
+<li>[ ] An LDS.org account with a valid calling (see below)</li>
+<li>[ ] A computer with an internet connection and 1 GB of free space (for temporary files, will be cleared when done)</li>
+</ul>
+
+<h3>
+<a id="valid-callings" class="anchor" href="#valid-callings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Valid callings</h3>
+
+<p>In order to successfully set up Ldsyouth-notify, you <strong>MUST</strong> have one of the following callings tied to your account. If you do not, you will have to delete everything and start over.</p>
+
+<ul>
+<li>Any bishopric calling</li>
+<li>Branch president</li>
+<li>YM/YW presidency</li>
+<li>Quorum/class president (Only the president can run the setup, but any youth in a presidency can use ldsyouth-notify)</li>
+<li>Ward Clerk</li>
+<li>Ward Technology Specialist</li>
+<li>Any calling in Boy Scouts (<strong>NOT</strong> Cub Scouts)</li>
+</ul>
+
+<h2>
+<a id="step-1-deploying-to-heroku" class="anchor" href="#step-1-deploying-to-heroku" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Deploying to Heroku</h2>
+
+<p>Heroku is an online PaaS (Platform as a Service) used to host web apps. Ldsyouth-notify is pre-packaged to easily deploy to Heroku with minimal configuration. Although Heroku offers paid plans with scaling, you will only need the free 1X plan (selected by default when you create an account).</p>
+
+<p>If you have used Heroku before, then go ahead and follow these instructions. If not, continue to the next paragraph.</p>
+
+<ul>
+<li>[ ] <code>git clone</code> the repo to your hard drive</li>
+<li>[ ] Create a dyno for your app using  or the Toolbelt</li>
+<li>[ ] Using the Heroku Toolbelt, <code>git push</code> the app to Heroku</li>
+<li>[ ] Ensure that <code>RACK_ENV</code> is set to <code>production</code>
+</li>
+</ul>
+
+<p>Go ahead and log into . Once you are in, navigate to the GitHub project page <a href="http://github.com/ARMmaster17/ldsyouth-notify">http://github.com/ARMmaster17/ldsyouth-notify</a> and click on the purple <em>Deploy to Heroku</em> button. Heroku will then ask you to pick a name for your "dyno". A dyno is a server that runs a web app on Heroku. Pick wisely as this name cannot be changed later. The URL to your dyno will become <em>YourDynoName</em>.herokuapp.com. Leave all the scaling options at 1. Once the code is copied, you should see the dashboard for your app. You may now proceed to step two.</p>
+
+<h2>
+<a id="step-2-configuring-ward-data" class="anchor" href="#step-2-configuring-ward-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Configuring ward data</h2>
+
+<p>Now navigate to <em>YourDynoName</em>.herokuapp.com (unless you modified the DNS settings, then use your own URL). You should be presented with a setup page. If not, go back and retry. You may need to recreate your Heroku Dyno.</p>
+
+<p>For the first field, it will ask for your ward. Type it in <strong>EXACTLY</strong> as it appears on . For example, if you live in the Internet Valley ward, you would type "Internet Valley Ward" without the quotes. Note that capitalization is important. If you are not sure what to put, check your account on .</p>
+
+<p>The next set of fields will ask what classes/quorums you would like to activate ldsyouth-notify for. Note that this can be changed later.</p>
+
+<p>Upon finishing, click submit. You should then be redirected to a page asking you to log in using your  account. Make sure that your ward clerk has added a valid calling to your  profile first. Once you log in, it may ask if ldsyouth-notify can use some information from your account. Click accept. Ldsyouth-notify does not store any data, nor does it forward any information to us (see our information usage agreement included with ldsyouth-notify). All data that is stored, is kept inside your Secured Heroku Dyno.</p>
+
+<p>Congratulations, you have now set up ldsyouth-notify! If you hit any errors, see the troubleshooting area of our wiki. If you still run into trouble, file a bug on our GitHub page: <a href="http://github.com/ARMmaster17/ldsyouth-notify/issues/new">http://github.com/ARMmaster17/ldsyouth-notify/issues/new</a>.</p>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<p>Although ldsyouth-notify is free, we do ask that you give back by contributing to the project. See our list of current issues to see what needs to be done: <a href="http://github.com/ARMmaster17/ldsyouth-notify/issues">http://github.com/ARMmaster17/ldsyouth-notify/issues</a>. Make sure your contributions conform to our standards listed in <strong>~/CONTRIBUTING.md</strong>.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/ARMmaster17/ldsyouth-notify/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ARMmaster17/ldsyouth-notify/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/ARMmaster17/ldsyouth-notify"></a> is maintained by <a href="https://github.com/ARMmaster17">ARMmaster17</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
