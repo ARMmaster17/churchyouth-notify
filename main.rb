@@ -43,11 +43,17 @@ get '/setup' do
 end
 post '/setup/callback' do
   # Send configuration to config file
-  quorumarray = params[:qa]
-  classarray = params[:ca]
+  if(params[:qa] == nil)
+    quorumstring = ""
+  else
+    quorumstring = params[:qa].join(',')
+  end
+  if(params[:ca] == nil)
+    classstring = ""
+  else
+    classstring = params[:ca].join(',')
+  end
   warddata = params[:ward]
-  quorumstring = quorumarray.join(',')
-  classstring = classarray.join(',')
   begin
     file = File.open(File.expand_path("./config/config.json"), "w")
     file.write('{ "ward":"' + warddata + '","classes":"' + classstring + '","quorums":"' + quorumstring + '" }')
