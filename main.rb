@@ -67,6 +67,9 @@ post '/setup/callback' do
     redirect "/"
   end
 end
+get '/static/privacy' do
+  slim :privacyagreement
+end
 get '/api' do
   API.a()
 end
