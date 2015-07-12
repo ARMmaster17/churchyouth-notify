@@ -16,6 +16,12 @@ class TestVersion < Test::Unit::TestCase
     assert last_response.ok?
   end
   def test_setupcallback
+    post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"]
+    assert !last_response.ok?
+    Config.factoryreset
+    post '/setup/callback', :ward => "Test ward"
+    assert !last_response.ok?
+    Config.factoryreset
     post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
     assert File.exists?(File.expand_path("./config/config.json"))
