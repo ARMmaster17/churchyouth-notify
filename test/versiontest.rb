@@ -19,11 +19,17 @@ class TestVersion < Test::Unit::TestCase
     post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"]
     assert !last_response.ok?
     Config.factoryreset
+  end
+  def test_setupcallback2
     post '/setup/callback', :ward => "Test ward"
     assert !last_response.ok?
     Config.factoryreset
+  end
+  def test_setupcallback3
     post '/setup/callback', :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
+  end
+  def test_setupcallback4
     assert File.exists?(File.expand_path("./config/config.json"))
     configs = File.open(File.expand_path("./config/config.json"))
     jsondata = JSON.parse(configs.read)
@@ -49,10 +55,16 @@ class TestVersion < Test::Unit::TestCase
   def test_apimailvalidate
     get '/api/mail/validate?m=user@test.com'
     assert last_response.body = "true"
+  end
+  def test_apimailvalidate2
     get '/api/mail/validate?m=user@test.org'
     assert last_response.body = "true"
+  end
+  def test_apimailvalidate3
     get '/api/mail/validate?m=user@test.net'
     assert last_response.body = "true"
+  end
+  def test_apimailvalidate4
     get '/api/mail/validate?m=user@test.nz'
     assert last_response.body = "false"
   end
