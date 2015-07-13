@@ -68,9 +68,15 @@ post '/setup/callback' do
   end
 end
 get '/static/privacy' do
+  @PageTitle = 'Data Privacy Agreement'
+  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.getVar("ward")
   slim :privacyagreement
 end
 get '/account/login' do
+  @PageTitle = 'Log in'
+  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.getVar("ward")
   slim :accountlogin
 end
 post '/account/process' do
@@ -78,6 +84,9 @@ post '/account/process' do
   redirect "/"
 end
 get '/dashboard/home' do
+  @PageTitle = 'Dashboard'
+  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.getVar("ward")
   slim :dashboardhome
 end
 get '/api' do
