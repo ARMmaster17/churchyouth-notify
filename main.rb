@@ -70,6 +70,13 @@ end
 get '/static/privacy' do
   slim :privacyagreement
 end
+get '/account/login' do
+  slim :accountlogin
+end
+get '/account/process' do
+  session['uname'] = params[:uname]
+  redirect "/"
+end
 get '/api' do
   API.a()
 end
