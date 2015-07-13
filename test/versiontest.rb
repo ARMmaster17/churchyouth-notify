@@ -39,6 +39,18 @@ class TestVersion < Test::Unit::TestCase
     get '/static/privacy'
     assert last_response.ok?
   end
+  def test_accountlogin
+    get '/account/login'
+    assert last_response.ok?
+  end
+  def test_accountprocess
+    post '/account/process', :uname => "Test user"
+    assert !last_response.ok?
+  end
+  def test_dashboardhome
+    get '/dashboard/home'
+    assert last_response.ok?
+  end
   def test_apia
     get '/api'
     assert last_response.ok?
