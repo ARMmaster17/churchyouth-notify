@@ -13,7 +13,7 @@
 [![Issue Stats](http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/pr?style=flat)](http://issuestats.com/github/ARMmaster17/ldsyouth-notify)
 [![Issue Stats](http://issuestats.com/github/ARMmaster17/ldsyouth-notify/badge/issue?style=flat)](http://issuestats.com/github/ARMmaster17/ldsyouth-notify)
 
-Ldsyouth-notify is a omponentized, deployable tool for managing LDS youth group activities. It simplifies the task of sending emails out to keep parents and youth notified of upcoming mutual events and sunday assignments. It is designed to be easily deployable with no experience or hardware needed. Ldsyouth-notify also feeds directly from the lds.org directory. No need for keeping track of up-to-date emails!
+Ldsyouth-notify is a componentized, deployable tool for managing LDS youth group activities. It simplifies the task of sending emails out to keep parents and youth notified of upcoming mutual events and sunday assignments. It is designed to be easily deployable with no experience or hardware needed. Ldsyouth-notify also feeds directly from the lds.org directory. No need for keeping track of up-to-date emails!
 
 # Getting started
 To get started, you will need the following:
