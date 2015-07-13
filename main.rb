@@ -77,6 +77,9 @@ get '/account/process' do
   session['uname'] = params[:uname]
   redirect "/"
 end
+get '/dashboard/home' do
+  slim :dashboardhome
+end
 get '/api' do
   API.a()
 end
