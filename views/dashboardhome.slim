@@ -73,7 +73,7 @@ head
                   <th>Email Address</th>
                 </tr>
               </thead>
-              <script src="/src/js/dashboard/controllers/ctrlreclist.js"></script>
+              <!--<script src="/src/js/dashboard/controllers/ctrlreclist.js"></script>-->
               <div ng-app="appRecList" ng-controller="ctrlRecList">
                 <tbody ng-repeat="x in modRecList">
                     <tr>
@@ -85,6 +85,18 @@ head
                     </tr>
                 </tbody>
               </div>
+              <script>
+                angular.module('appRecList', []).controller('ctrlRecList', function($scope) {
+                    $scope.modRecList = [
+                        {uid:'1',fname:'Test',lname:'User',gid:'p',email:'user@example.com'},
+                        {uid:'2',fname:'Test',lname:'User',gid:'p',email:'user@example.com'},
+                        {uid:'3',fname:'Test',lname:'User',gid:'p',email:'user@example.com'},
+                        {uid:'4',fname:'Test',lname:'User',gid:'p',email:'user@example.com'},
+                        {uid:'5',fname:'Test',lname:'User',gid:'p',email:'user@example.com'},
+                        {uid:'6',fname:'Test',lname:'User',gid:'p',email:'user@example.com'}
+                    ];
+                });
+              </script>
             </table>
           </div>
         </div>
