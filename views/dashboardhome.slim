@@ -73,9 +73,8 @@ head
                   <th>Email Address</th>
                 </tr>
               </thead>
-              <div ng-app="appRecList" ng-controller="ctrlRecList">
                 <script src="/src/js/dashboard/controllers/ctrlreclist.js"></script>
-                <tbody>
+                <tbody ng-app="appRecList" ng-controller="ctrlRecList">
                     <tr ng-repeat="x in modRecList">
                         <td>{{x.uid}}</td>
                         <td>{{x.fname}}</td>
@@ -84,7 +83,6 @@ head
                         <td>{{x.email}}</td>
                     </tr>
                 </tbody>
-              </div>
             </table>
           </div>
         </div>
