@@ -89,6 +89,12 @@ get '/dashboard/home' do
   @configWard = Config.getVar("ward")
   slim :dashboardhome
 end
+get '/dashboard/email/create' do
+  @PageTitle = 'Create Email'
+  @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
+  @configWard = Config.getVar("ward")
+  slim :dashboardemailcreate
+end
 get '/api' do
   API.a()
 end
