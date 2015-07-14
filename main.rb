@@ -38,6 +38,8 @@ get '/setup' do
   if configured?
     redirect '/'
   else
+    @PageTitle = 'Setup'
+    @TRAVISBUILDNUMBER = Pagevars.setVars("CIbuild")
     slim :setupapp
   end
 end
