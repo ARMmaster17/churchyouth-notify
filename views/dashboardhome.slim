@@ -75,8 +75,8 @@ head
               </thead>
               <!--<script src="/src/js/dashboard/controllers/ctrlreclist.js"></script>-->
               <div ng-app="appRecList" ng-controller="ctrlRecList">
-                <tbody ng-repeat="x in modRecList">
-                    <tr>
+                <tbody>
+                    <tr ng-repeat="x in modRecList">
                         <td>{{x.uid}}</td>
                         <td>{{x.fname}}</td>
                         <td>{{x.lname}}</td>
