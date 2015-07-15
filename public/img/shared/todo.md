@@ -1,1 +1,1 @@
-- [ ] ldsyouth-notify logo (all sizes)
+- [X] ldsyouth-notify logo (all sizes)
