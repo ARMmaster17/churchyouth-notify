@@ -1,0 +1,1 @@
+- [ ] ldsyouth-notify logo (all sizes)

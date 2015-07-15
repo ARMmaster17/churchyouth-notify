@@ -1,0 +1,6 @@
+- [ ] Header
+- [ ] bg
+- [ ] bullet list icons
+- [ ] misc icons
+- [ ] footer
+- [ ] footer icons
