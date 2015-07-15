@@ -1,0 +1,4 @@
+- [ ] title bar icon
+- [ ] login icon
+- [ ] error page icons
+- [ ] footer icons
