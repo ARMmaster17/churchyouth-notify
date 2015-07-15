@@ -62,7 +62,14 @@ head
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
-                <!-- email form -->
+                <form action="/dashboard/email/process">
+                    <p>Mutual Activity:</p><br>
+                    <textarea name="mutual" rows="10" cols="30">Put some details about the mutual activity this week. Include meeting times, place(s), and assignments if neccessary.</textarea><br>
+                    <br>
+                    <p>Sunday</p><br>
+                    <textarea name="message" rows="10" cols="30">Here you should put sacrament meeting assignments, lesson information, and other information pertaining to Sunday church meetings.</textarea><br>
+                    <input type="submit" disabled>Submit</input>
+                </form>
               </div>
               <div class="col-sm-6">
                 <!-- email preview (angular) -->
