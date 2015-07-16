@@ -55,6 +55,10 @@ class TestVersion < Test::Unit::TestCase
     get '/dashboard/email/create'
     assert last_response.ok?
   end
+  def test_varstore
+    require_relative '../inc/pagevars'
+    assert_equal(Pagevars.setVars("noexist"), "Error")
+  end
   def test_apia
     get '/api'
     assert last_response.ok?
