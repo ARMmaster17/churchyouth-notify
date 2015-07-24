@@ -16,17 +16,17 @@ class TestVersion < Test::Unit::TestCase
     assert last_response.ok?
   end
   def test_setupcallback
-    post '/setup/callback', :admin = "00000", :ward => "Test ward", :qa => ["qd","qt","qp"]
+    post '/setup/callback', :admin => "00000", :ward => "Test ward", :qa => ["qd","qt","qp"]
     assert !last_response.ok?
     Config.factoryreset
   end
   def test_setupcallback2
-    post '/setup/callback', :admin = "00000", :ward => "Test ward"
+    post '/setup/callback', :admin => "00000", :ward => "Test ward"
     assert !last_response.ok?
     Config.factoryreset
   end
   def test_setupcallback3
-    post '/setup/callback', :admin = "00000", :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
+    post '/setup/callback', :admin => "00000", :ward => "Test ward", :qa => ["qd","qt","qp"], :ca => ["cb","cm","cl"]
     assert !last_response.ok?
   end
   def test_setupcallback4
