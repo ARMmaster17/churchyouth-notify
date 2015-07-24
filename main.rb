@@ -56,9 +56,10 @@ post '/setup/callback' do
     classstring = params[:ca].join(',')
   end
   warddata = params[:ward]
+  admindata = params[:admin]
   begin
     file = File.open(File.expand_path("./config/config.json"), "w")
-    file.write('{ "ward":"' + warddata + '","classes":"' + classstring + '","quorums":"' + quorumstring + '" }')
+    file.write('{ "admin":"' + admindata + '","ward":"' + warddata + '","classes":"' + classstring + '","quorums":"' + quorumstring + '" }')
   rescue IOError => e
     "An error has occured. Please send this code to the developer: 0x00 CONFIGSTOREIOERR"
     ioerr = true
